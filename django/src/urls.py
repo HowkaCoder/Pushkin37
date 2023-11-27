@@ -8,6 +8,7 @@ from src.settings.base import (
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include('apps.api.urls'))
 ]
 
 urlpatterns += static(MEDIA_URL, document_root=MEDIA_ROOT)

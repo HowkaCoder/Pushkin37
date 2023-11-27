@@ -17,14 +17,18 @@ INSTALLED_APPS = [
     'apps.staff',
     'apps.pride_students',
     'apps.staff_position',
+    'apps.api',
 
     # third party
     'django_cleanup',
+    'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware', # third party
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',

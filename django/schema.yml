@@ -1,0 +1,607 @@
+openapi: 3.0.3
+info:
+  title: Pushkin 37
+  version: '0.1'
+paths:
+  /api/pride-student/:
+    get:
+      operationId: pride_student_list
+      tags:
+      - pride-student
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PrideStudent'
+          description: ''
+    post:
+      operationId: pride_student_create
+      tags:
+      - pride-student
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          description: No response body
+  /api/pride-student/{id}/:
+    get:
+      operationId: pride_student_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - pride-student
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrideStudent'
+          description: ''
+    patch:
+      operationId: pride_student_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - pride-student
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedPrideStudent'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedPrideStudent'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedPrideStudent'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrideStudent'
+          description: ''
+    delete:
+      operationId: pride_student_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - pride-student
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/schema/:
+    get:
+      operationId: schema_retrieve
+      description: |-
+        OpenApi3 schema for this API. Format can be selected via content negotiation.
+
+        - YAML: application/vnd.oai.openapi
+        - JSON: application/vnd.oai.openapi+json
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - yaml
+      - in: query
+        name: lang
+        schema:
+          type: string
+          enum:
+          - af
+          - ar
+          - ar-dz
+          - ast
+          - az
+          - be
+          - bg
+          - bn
+          - br
+          - bs
+          - ca
+          - ckb
+          - cs
+          - cy
+          - da
+          - de
+          - dsb
+          - el
+          - en
+          - en-au
+          - en-gb
+          - eo
+          - es
+          - es-ar
+          - es-co
+          - es-mx
+          - es-ni
+          - es-ve
+          - et
+          - eu
+          - fa
+          - fi
+          - fr
+          - fy
+          - ga
+          - gd
+          - gl
+          - he
+          - hi
+          - hr
+          - hsb
+          - hu
+          - hy
+          - ia
+          - id
+          - ig
+          - io
+          - is
+          - it
+          - ja
+          - ka
+          - kab
+          - kk
+          - km
+          - kn
+          - ko
+          - ky
+          - lb
+          - lt
+          - lv
+          - mk
+          - ml
+          - mn
+          - mr
+          - ms
+          - my
+          - nb
+          - ne
+          - nl
+          - nn
+          - os
+          - pa
+          - pl
+          - pt
+          - pt-br
+          - ro
+          - ru
+          - sk
+          - sl
+          - sq
+          - sr
+          - sr-latn
+          - sv
+          - sw
+          - ta
+          - te
+          - tg
+          - th
+          - tk
+          - tr
+          - tt
+          - udm
+          - uk
+          - ur
+          - uz
+          - vi
+          - zh-hans
+          - zh-hant
+      tags:
+      - schema
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/vnd.oai.openapi:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/yaml:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/vnd.oai.openapi+json:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/staff/:
+    get:
+      operationId: staff_list
+      tags:
+      - staff
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Staff'
+          description: ''
+    post:
+      operationId: staff_create
+      tags:
+      - staff
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          description: No response body
+  /api/staff-position/:
+    get:
+      operationId: staff_position_list
+      tags:
+      - staff-position
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StaffPosition'
+          description: ''
+    post:
+      operationId: staff_position_create
+      tags:
+      - staff-position
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StaffPosition'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/StaffPosition'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/StaffPosition'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StaffPosition'
+          description: ''
+  /api/staff-position/{id}/:
+    get:
+      operationId: staff_position_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - staff-position
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StaffPosition'
+          description: ''
+    patch:
+      operationId: staff_position_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - staff-position
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedStaffPosition'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedStaffPosition'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedStaffPosition'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StaffPosition'
+          description: ''
+    delete:
+      operationId: staff_position_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - staff-position
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/staff/{id}/:
+    get:
+      operationId: staff_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - staff
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Staff'
+          description: ''
+    patch:
+      operationId: staff_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - staff
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedStaff'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedStaff'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedStaff'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Staff'
+          description: ''
+    delete:
+      operationId: staff_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - staff
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+components:
+  schemas:
+    PatchedPrideStudent:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        fullname:
+          type: string
+          title: ФИО
+          maxLength: 128
+        graduation_year:
+          type: integer
+          title: Год выпуска
+        description:
+          type: string
+          title: Информация об ученике
+        photo:
+          type: string
+          format: uri
+          title: Фото
+        current_position:
+          type: string
+          title: Текущяя позиция
+          maxLength: 128
+    PatchedStaff:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        fullname:
+          type: string
+          title: ФИО
+          maxLength: 128
+        description:
+          type: string
+          title: О сотруднике
+        photo:
+          type: string
+          format: uri
+          title: Фото сотрудника
+        experience:
+          type: integer
+          title: Стаж сотрудника (в годах)
+        position:
+          type: integer
+          title: Позиция сотрудника
+    PatchedStaffPosition:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        position:
+          type: string
+          title: Позиция
+          maxLength: 128
+    PrideStudent:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        fullname:
+          type: string
+          title: ФИО
+          maxLength: 128
+        graduation_year:
+          type: integer
+          title: Год выпуска
+        description:
+          type: string
+          title: Информация об ученике
+        photo:
+          type: string
+          format: uri
+          title: Фото
+        current_position:
+          type: string
+          title: Текущяя позиция
+          maxLength: 128
+      required:
+      - current_position
+      - description
+      - fullname
+      - graduation_year
+      - id
+      - photo
+    Staff:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        fullname:
+          type: string
+          title: ФИО
+          maxLength: 128
+        description:
+          type: string
+          title: О сотруднике
+        photo:
+          type: string
+          format: uri
+          title: Фото сотрудника
+        experience:
+          type: integer
+          title: Стаж сотрудника (в годах)
+        position:
+          type: integer
+          title: Позиция сотрудника
+      required:
+      - description
+      - experience
+      - fullname
+      - id
+      - photo
+      - position
+    StaffPosition:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        position:
+          type: string
+          title: Позиция
+          maxLength: 128
+      required:
+      - id
+      - position
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

@@ -1,0 +1,404 @@
+{
+  "$schema": "https://www.krakend.io/schema/krakend.json",
+  "version": 3,
+  "name": "Pushkin37",
+  "timeout": "3000ms",
+  "cache_ttl": "300s",
+  "output_encoding": "json",
+  "endpoints": [
+    {
+      "endpoint": "/api/post-stories",
+      "method": "GET",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "is_collection": true,
+          "url_pattern": "/api/post-stories",
+          "host":["http://localhost:8084"],
+          "encoding": "json",
+          "sd": "static",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/post-stories/{id}",
+      "method": "GET",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/post-stories/{id}",
+          "host":["http://localhost:8084"],
+          "encoding": "json",
+          "sd": "static",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/post-stories",
+      "method": "POST",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/post-stories",
+          "host":["http://localhost:8084"],
+          "encoding": "json",
+          "sd": "static",
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/post-stories/{id}",
+      "method": "PUT",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/post-stories/{id}",
+          "host":["http://localhost:8084"],
+          "encoding": "json",
+          "sd": "static",
+          "method": "PATCH"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/post-stories/{id}",
+      "method": "DELETE",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/post-stories/{id}",
+          "host":["http://localhost:8084"],
+          "encoding": "json",
+          "sd": "static",
+          "method": "DELETE"
+        }
+      ]
+    },
+
+
+
+
+
+    {
+      "endpoint": "/api/post-news",
+      "method": "GET",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "is_collection": true,
+          "url_pattern": "/api/post-news",
+          "host":["http://localhost:8083"],
+          "encoding": "json",
+          "sd": "static",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/post-news/{id}",
+      "method": "GET",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/post-news/{id}",
+          "host":["http://localhost:8083"],
+          "encoding": "json",
+          "sd": "static",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/post-news",
+      "method": "POST",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/post-news",
+          "host":["http://localhost:8083"],
+          "encoding": "json",
+          "sd": "static",
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/post-news/{id}",
+      "method": "PATCH",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/post-news/{id}",
+          "host":["http://localhost:8083"],
+          "encoding": "json",
+          "sd": "static",
+          "method": "PATCH"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/post-news/{id}",
+      "method": "DELETE",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/post-news/{id}",
+          "host":["http://localhost:8083"],
+          "encoding": "json",
+          "sd": "static",
+          "method": "DELETE"
+        }
+      ]
+    } ,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {
+      "endpoint": "/api/pride-student/",
+      "method": "GET",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "is_collection": true,
+          "url_pattern": "/api/pride-student/",
+          "host":["https://pushkin37.pythonanywhere.com"],
+          "encoding": "json",
+          "sd": "static",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/pride-student/{id}",
+      "method": "GET",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/pride-student/{id}",
+          "host":["https://pushkin37.pythonanywhere.com"],
+          "encoding": "json",
+          "sd": "static",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/pride-student/",
+      "method": "POST",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/pride-student/",
+          "host":["https://pushkin37.pythonanywhere.com"],
+          "encoding": "json",
+          "sd": "static",
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/pride-student/{id}",
+      "method": "PATCH",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/pride-student/{id}",
+          "host":["https://pushkin37.pythonanywhere.com"],
+          "encoding": "json",
+          "sd": "static",
+          "method": "PATCH"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/pride-student/{id}",
+      "method": "DELETE",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/pride-student/{id}",
+          "host":["https://pushkin37.pythonanywhere.com"],
+          "encoding": "json",
+          "sd": "static",
+          "method": "DELETE"
+        }
+      ]
+    },
+
+
+
+
+
+
+
+    {
+      "endpoint": "/api/staff/",
+      "method": "GET",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "is_collection": true,
+          "url_pattern": "/api/staff/",
+          "host":["https://pushkin37.pythonanywhere.com"],
+          "encoding": "json",
+          "sd": "static",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/staff/{id}",
+      "method": "GET",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/staff/{id}",
+          "host":["https://pushkin37.pythonanywhere.com"],
+          "encoding": "json",
+          "sd": "static",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/staff/",
+      "method": "POST",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/staff/",
+          "host":["https://pushkin37.pythonanywhere.com"],
+          "encoding": "json",
+          "sd": "static",
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/staff/{id}",
+      "method": "PATCH",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/staff/{id}",
+          "host":["https://pushkin37.pythonanywhere.com"],
+          "encoding": "json",
+          "sd": "static",
+          "method": "PATCH"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/staff/{id}",
+      "method": "DELETE",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/staff/{id}",
+          "host":["https://pushkin37.pythonanywhere.com"],
+          "encoding": "json",
+          "sd": "static",
+          "method": "DELETE"
+        }
+      ]
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+    {
+      "endpoint": "/api/staff-position/",
+      "method": "GET",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "is_collection": true,
+          "url_pattern": "/api/staff-position/",
+          "host":["https://pushkin37.pythonanywhere.com"],
+          "encoding": "json",
+          "sd": "static",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/staff-position/{id}",
+      "method": "GET",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/staff-position/{id}",
+          "host":["https://pushkin37.pythonanywhere.com"],
+          "encoding": "json",
+          "sd": "static",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/staff-position/",
+      "method": "POST",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/staff-position/",
+          "host":["https://pushkin37.pythonanywhere.com"],
+          "encoding": "json",
+          "sd": "static",
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/staff-position/{id}",
+      "method": "PATCH",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/staff-position/{id}",
+          "host":["https://pushkin37.pythonanywhere.com"],
+          "encoding": "json",
+          "sd": "static",
+          "method": "PATCH"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/staff-position/{id}",
+      "method": "DELETE",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/staff-position/{id}",
+          "host":["https://pushkin37.pythonanywhere.com"],
+          "encoding": "json",
+          "sd": "static",
+          "method": "DELETE"
+        }
+      ]
+    }
+  ],
+  "port": 8081
+}

@@ -14,7 +14,7 @@
         {
           "is_collection": true,
           "url_pattern": "/api/post-stories",
-          "host":["http://localhost:8084"],
+          "host":["http://post_story_service:8084"],
           "encoding": "json",
           "sd": "static",
           "method": "GET"
@@ -28,7 +28,7 @@
       "backend": [
         {
           "url_pattern": "/api/post-stories/{id}",
-          "host":["http://localhost:8084"],
+          "host":["http://post_story_service:8084"],
           "encoding": "json",
           "sd": "static",
           "method": "GET"
@@ -42,7 +42,7 @@
       "backend": [
         {
           "url_pattern": "/api/post-stories",
-          "host":["http://localhost:8084"],
+          "host":["http://post_story_service:8084"],
           "encoding": "json",
           "sd": "static",
           "method": "POST"
@@ -56,7 +56,7 @@
       "backend": [
         {
           "url_pattern": "/api/post-stories/{id}",
-          "host":["http://localhost:8084"],
+          "host":["http://post_story_service:8084"],
           "encoding": "json",
           "sd": "static",
           "method": "PATCH"
@@ -70,7 +70,7 @@
       "backend": [
         {
           "url_pattern": "/api/post-stories/{id}",
-          "host":["http://localhost:8084"],
+          "host":["http://post_story_service:8084"],
           "encoding": "json",
           "sd": "static",
           "method": "DELETE"
@@ -90,7 +90,7 @@
         {
           "is_collection": true,
           "url_pattern": "/api/post-news",
-          "host":["http://localhost:8083"],
+          "host":["http://news_service:8083"],
           "encoding": "json",
           "sd": "static",
           "method": "GET"
@@ -104,7 +104,7 @@
       "backend": [
         {
           "url_pattern": "/api/post-news/{id}",
-          "host":["http://localhost:8083"],
+          "host":["http://news_service:8083"],
           "encoding": "json",
           "sd": "static",
           "method": "GET"
@@ -118,7 +118,7 @@
       "backend": [
         {
           "url_pattern": "/api/post-news",
-          "host":["http://localhost:8083"],
+          "host":["http://news_service:8083"],
           "encoding": "json",
           "sd": "static",
           "method": "POST"
@@ -132,7 +132,7 @@
       "backend": [
         {
           "url_pattern": "/api/post-news/{id}",
-          "host":["http://localhost:8083"],
+          "host":["http://news_service:8083"],
           "encoding": "json",
           "sd": "static",
           "method": "PATCH"
@@ -146,7 +146,7 @@
       "backend": [
         {
           "url_pattern": "/api/post-news/{id}",
-          "host":["http://localhost:8083"],
+          "host":["http://news_service:8083"],
           "encoding": "json",
           "sd": "static",
           "method": "DELETE"
@@ -178,7 +178,13 @@
           "host":["https://pushkin37.pythonanywhere.com"],
           "encoding": "json",
           "sd": "static",
-          "method": "GET"
+          "method": "GET",
+          "healthcheck": {
+          "endpoint": "/health", 
+        "timeout": "1000ms",
+        "interval": "5000ms",
+        "expected_response": "ok"
+      }
         }
       ]
     },
@@ -192,7 +198,14 @@
           "host":["https://pushkin37.pythonanywhere.com"],
           "encoding": "json",
           "sd": "static",
-          "method": "GET"
+          "method": "GET",
+          "healthcheck": {
+          "endpoint": "/health", 
+        "timeout": "1000ms",
+        "interval": "5000ms",
+        "expected_response": "ok"
+      }
+
         }
       ]
     },
@@ -206,7 +219,14 @@
           "host":["https://pushkin37.pythonanywhere.com"],
           "encoding": "json",
           "sd": "static",
-          "method": "POST"
+          "method": "POST",
+          "healthcheck": {
+          "endpoint": "/health", 
+        "timeout": "1000ms",
+        "interval": "5000ms",
+        "expected_response": "ok"
+      }
+
         }
       ]
     },
@@ -220,7 +240,14 @@
           "host":["https://pushkin37.pythonanywhere.com"],
           "encoding": "json",
           "sd": "static",
-          "method": "PATCH"
+          "method": "PATCH",
+          "healthcheck": {
+          "endpoint": "/health", 
+        "timeout": "1000ms",
+        "interval": "5000ms",
+        "expected_response": "ok"
+      }
+
         }
       ]
     },
@@ -234,7 +261,14 @@
           "host":["https://pushkin37.pythonanywhere.com"],
           "encoding": "json",
           "sd": "static",
-          "method": "DELETE"
+          "method": "DELETE",
+          "healthcheck": {
+          "endpoint": "/health", 
+        "timeout": "1000ms",
+        "interval": "5000ms",
+        "expected_response": "ok"
+      }
+
         }
       ]
     },
@@ -256,7 +290,14 @@
           "host":["https://pushkin37.pythonanywhere.com"],
           "encoding": "json",
           "sd": "static",
-          "method": "GET"
+          "method": "GET",
+          "healthcheck": {
+          "endpoint": "/health", 
+        "timeout": "1000ms",
+        "interval": "5000ms",
+        "expected_response": "ok"
+      }
+
         }
       ]
     },
@@ -270,7 +311,14 @@
           "host":["https://pushkin37.pythonanywhere.com"],
           "encoding": "json",
           "sd": "static",
-          "method": "GET"
+          "method": "GET",
+          "healthcheck": {
+          "endpoint": "/health", 
+        "timeout": "1000ms",
+        "interval": "5000ms",
+        "expected_response": "ok"
+      }
+
         }
       ]
     },
@@ -284,7 +332,14 @@
           "host":["https://pushkin37.pythonanywhere.com"],
           "encoding": "json",
           "sd": "static",
-          "method": "POST"
+          "method": "POST",
+          "healthcheck": {
+          "endpoint": "/health", 
+        "timeout": "1000ms",
+        "interval": "5000ms",
+        "expected_response": "ok"
+      }
+
         }
       ]
     },
@@ -298,7 +353,14 @@
           "host":["https://pushkin37.pythonanywhere.com"],
           "encoding": "json",
           "sd": "static",
-          "method": "PATCH"
+          "method": "PATCH",
+          "healthcheck": {
+          "endpoint": "/health", 
+        "timeout": "1000ms",
+        "interval": "5000ms",
+        "expected_response": "ok"
+      }
+
         }
       ]
     },
@@ -312,7 +374,14 @@
           "host":["https://pushkin37.pythonanywhere.com"],
           "encoding": "json",
           "sd": "static",
-          "method": "DELETE"
+          "method": "DELETE",
+          "healthcheck": {
+          "endpoint": "/health", 
+        "timeout": "1000ms",
+        "interval": "5000ms",
+        "expected_response": "ok"
+      }
+
         }
       ]
     },
@@ -339,7 +408,14 @@
           "host":["https://pushkin37.pythonanywhere.com"],
           "encoding": "json",
           "sd": "static",
-          "method": "GET"
+          "method": "GET",
+          "healthcheck": {
+          "endpoint": "/health", 
+        "timeout": "1000ms",
+        "interval": "5000ms",
+        "expected_response": "ok"
+      }
+
         }
       ]
     },
@@ -353,7 +429,14 @@
           "host":["https://pushkin37.pythonanywhere.com"],
           "encoding": "json",
           "sd": "static",
-          "method": "GET"
+          "method": "GET",
+          "healthcheck": {
+          "endpoint": "/health", 
+        "timeout": "1000ms",
+        "interval": "5000ms",
+        "expected_response": "ok"
+      }
+
         }
       ]
     },
@@ -367,7 +450,14 @@
           "host":["https://pushkin37.pythonanywhere.com"],
           "encoding": "json",
           "sd": "static",
-          "method": "POST"
+          "method": "POST",
+          "healthcheck": {
+          "endpoint": "/health", 
+        "timeout": "1000ms",
+        "interval": "5000ms",
+        "expected_response": "ok"
+      }
+
         }
       ]
     },
@@ -381,7 +471,14 @@
           "host":["https://pushkin37.pythonanywhere.com"],
           "encoding": "json",
           "sd": "static",
-          "method": "PATCH"
+          "method": "PATCH",
+          "healthcheck": {
+          "endpoint": "/health", 
+        "timeout": "1000ms",
+        "interval": "5000ms",
+        "expected_response": "ok"
+      }
+
         }
       ]
     },

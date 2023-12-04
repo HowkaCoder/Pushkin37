@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  news_service:
+    build:
+      context: ./news_service
+      dockerfile: Dockerfile
+    ports:
+      - "8083:8083"
+    networks:
+      - pushkin
+
+  post_story_service:
+    build:
+      context: ./post_story_service
+      dockerfile: Dockerfile
+    ports:
+      - "8084:8084"
+    networks:
+      - pushkin
+
+  krakend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    depends_on:
+      - news_service
+      - post_story_service
+    networks:
+      - pushkin
+
+networks:
+  pushkin:
+    external: true

@@ -497,7 +497,7 @@
       ]
     }
   ],
-  "port":"{{ .Env.PORT }}",
+  "port":"{{ if getenv `PORT` }}{{ getenv `PORT` }}{{ else }}3000{{ end }}",
   "host":"0.0.0.0",
   "extra_config": {
   "port": 3000

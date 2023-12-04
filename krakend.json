@@ -497,10 +497,10 @@
       ]
     }
   ],
-  "port":{{envInt `PORT`}},
+  "port":"{{ .Env.PORT }}",
   "host":"0.0.0.0",
   "extra_config": {
-  "port": "{{ .Env.PORT }}"
+  "port": 3000
 
 }
 }

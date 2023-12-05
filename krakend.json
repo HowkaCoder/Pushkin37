@@ -180,7 +180,7 @@
           "sd": "static",
           "method": "GET",
           "healthcheck": {
-          "endpoint": "/health", 
+          "endpoint": "/health",
         "timeout": "1000ms",
         "interval": "5000ms",
         "expected_response": "ok"
@@ -452,7 +452,7 @@
           "sd": "static",
           "method": "POST",
           "healthcheck": {
-          "endpoint": "/health", 
+          "endpoint": "/health",
         "timeout": "1000ms",
         "interval": "5000ms",
         "expected_response": "ok"
@@ -497,7 +497,7 @@
       ]
     }
   ],
-  "port":"{{ getenv `PORT` }}",
+  "port":8081,
   "host":"0.0.0.0",
   "extra_config": {
   "port": 3000
